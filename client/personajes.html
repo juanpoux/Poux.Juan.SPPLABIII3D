@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="css/estilos.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"
+        ></script>
+        <script src="./js/scripts.js" type="module" defer></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar bg-primary navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="./index.html"
+                        ><img src="./images/logo.png" alt=""
+                    /></a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li><a class="rounded" href="./index.html">Home</a></li>
+                            <li><a class="rounded" href="./personajes.html">Personajes</a></li>
+                            <li><a class="rounded" href="#">Blog</a></li>
+                            <li><a class="rounded" href="#">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="title_container">
+                <h1>Crud Heroes</h1>
+            </div>
+            <section class="container_alta">
+                <fieldset class="container_alta" style="width: 70%">
+                    <label class="shadow-lg p-2 mt-2 mb-4 fw-normal bg-body-tertiary rounded display-6 opacity-5">Información del SuperHeroe</label>
+                    <form class="formulario">
+                        <div class="container_input">
+                            <label for="txtNombre">Nombre</label>
+                            <input
+                                type="text"
+                                name="txtNombre"
+                                id="txtNombre"
+                                placeholder="Ingrese nombre"
+                            />
+                            <small></small>
+                        </div>
+
+                        <div class="container_input">
+                            <label for="txtAlias">Alias</label>
+                            <input
+                                type="text"
+                                name="txtAlias"
+                                id="txtAlias"
+                                placeholder="Ingrese alter-ego"
+                            />
+                            <small></small>
+                        </div>
+
+                        <div class="container_input">
+                            <label>Editorial</label>
+                            <div class="container_transacciones">
+                                <div class="radio_container">
+                                    <label for="radioMarvel"
+                                        ><img src="./images/marvel.png" alt=""
+                                    /></label>
+                                    <input
+                                        type="radio"
+                                        name="rdoEditorial"
+                                        value="Marvel"
+                                        id="radioMarvel"
+                                        checked
+                                    />
+                                </div>
+                                <div class="radio_container">
+                                    <label for="radioDC"
+                                        ><img src="./images/DC.png" alt=""
+                                    /></label>
+                                    <input
+                                        type="radio"
+                                        name="rdoEditorial"
+                                        value="DC"
+                                        id="radioDC"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container_input">
+                            <label for="rngFuerza">Fuerza</label>
+                            <input
+                                class="form-range"
+                                type="range"
+                                name="rngFuerza"
+                                id="rngFuerza"
+                            />
+                            <small></small>
+                        </div>
+
+                        <div class="container_input">
+                            <label for="slArma">Arma</label>
+                            <select name="slArma" id="slArma"></select>
+                            <small></small>
+                        </div>
+
+                        <input type="hidden" name="txtId" />
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                            id="btnGuardar"
+                        >
+                            <img src="./images/saveico.png" /> Guardar
+                        </button>
+                    </form>
+                </fieldset>
+            </section>
+            <div class="spinner" id="spinner"></div>
+
+            <div class="container_botones bg-dark rounded">
+                <input
+                    class="btn btn-primary"
+                    type="button"
+                    value="Modificar"
+                    id="btnModificar"
+                />
+                <input
+                    class="btn btn-default"
+                    type="button"
+                    value="Eliminar"
+                    id="btnEliminar"
+                />
+                <input
+                    class="btn btn-default"
+                    type="button"
+                    value="Cancelar"
+                    id="btnCancelar"
+                />
+            </div>
+
+            <div id="container_table_controls">
+                <div class="table_controls">
+                    <div id="container_select" class="prom_select"></div>
+                    <div id="container_promedio" class="prom_select">
+                        <label for="">Promedio de fuerza</label>
+                        <input id="promedio_content" type="text" readonly />
+                    </div>
+                </div>
+                <div id="container_checkBox" class="table_controls"></div>
+            </div>
+            <div id="container_tabla"></div>
+        </main>
+
+        <div id="spinner_container">
+            <span class="loader"></span>
+        </div>
+
+        <footer>
+            <div class="div_footer">
+                <nav class="nav_footer">
+                    <ul class="lista_enlaces_footer">
+                        <li>
+                            <a href="./index.html" class="items_nav_footer"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a href="./personajes.html" class="items_nav_footer"
+                                >Personajes</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="items_nav_footer">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#" class="items_nav_footer">Contacto</a>
+                        </li>
+                    </ul>
+                    <div class="derechos">
+                        <p>
+                            Laboratorio III - Todos los derechoos reservados
+                            2022 &copy;
+                        </p>
+                    </div>
+                </nav>
+            </div>
+        </footer>
+    </body>
+</html>

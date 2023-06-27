@@ -1,0 +1,44 @@
+{
+  "superheroes": [
+    {
+      "id": 1687896683883,
+      "nombre": "Bruce Wayne",
+      "fuerza": "98",
+      "alias": "Bat Man",
+      "editorial": "DC",
+      "arma": "Armadura"
+    },
+    {
+      "id": 1687902543911,
+      "nombre": "Bruce Banner",
+      "fuerza": "61",
+      "alias": "Hulk",
+      "editorial": "Marvel",
+      "arma": "Armadura"
+    },
+    {
+      "id": 1687903713211,
+      "nombre": "Tony Stark",
+      "fuerza": "100",
+      "alias": "Iron Man",
+      "editorial": "Marvel",
+      "arma": "Armadura"
+    },
+    {
+      "id": 1687903945171,
+      "nombre": "Barry Allen",
+      "fuerza": "29",
+      "alias": "Flash",
+      "editorial": "DC",
+      "arma": "Arma de Fuego"
+    }
+  ],
+  "armas": [
+    "Armadura",
+    "Espada",
+    "Martillo",
+    "Escudo",
+    "Arma de Fuego",
+    "Flechas"
+  ]
+}
